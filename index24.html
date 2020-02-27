@@ -9,12 +9,21 @@
 
     <script>
 
-        var a = prompt('Введите переменную а: ', '1');
-        var b = prompt('Введите переменную b: ', '2');
+        var a = prompt('Введите переменную а: ', ' ');
+        var b = prompt('Введите переменную b: ', ' ');
 
-        var a2 = Number(a);
-        var b2 = Number(b);
-        var result = (a2 * b2) < 4 ? 'Мало' : 'Много';
+        // var a2 = Number(a);
+        // var b2 = Number(b);
+        if (Number.isNaN(b) || Number.isNaN(a) || a == a.match(/\D{0,120}/) || b == b.match(/\D{0,120}/)) {
+            alert('Вы указали неверное значение!');
+            exit;
+        }
+        // var result = (Math.sqrt(a * b)) < 4 ? 'Мало' : 'Много';
+        if ((a * b) < 0) {
+            alert('Нельзя извлекать квадратный корень из отрицательного числа.');
+            exit;
+        }
+        var result = (Math.sqrt(a * b)) < 4 ? 'Мало' : 'Много';
 
         alert(result);
 
